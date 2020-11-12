@@ -1,9 +1,14 @@
+certifi==2020.11.8
+cloudinary==1.22.0
 dj-database-url==0.5.0
 Django==1.11
 django-bootstrap3==10.0.1
 gunicorn==19.9.0
 Pillow==5.2.0
 psycopg2==2.7.5
+psycopg2-binary==2.8.6
 python-decouple==3.1
 pytz==2018.5
+six==1.15.0
+urllib3==1.26.1
 whitenoise==3.3.1

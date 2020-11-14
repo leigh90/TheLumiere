@@ -6,6 +6,8 @@ from django.db import models
 # Create your models here.
 class Location(models.Model):
     location = models.CharField(max_length = 250)
+    location_logo = CloudinaryField(blank=True)
+
     
     def __str__(self): 
         return self.location
@@ -13,6 +15,7 @@ class Location(models.Model):
     
 class Category(models.Model):
     category = models.CharField(max_length = 250) 
+    category_logo = CloudinaryField()
 
     def __str__(self):
         return self.category

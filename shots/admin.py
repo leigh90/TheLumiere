@@ -8,3 +8,7 @@ from .models import Location,Category,Image
 admin.site.register(Location)
 admin.site.register(Category)
 admin.site.register(Image)
+
+
+class Image(admin.ModelAdmin):
+    search_fields = ('image_category')

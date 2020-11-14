@@ -1,22 +1,11 @@
 <div class="navigation">
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar">
         <div class="nav-links">
-            <a class="navbar-brand">HOME</a>
-            <a class="navbar-brand">CATEGORIES</a>
-            <a class="navbar-brand">AREAS</a>
-        </div>
-        
-        <!-- search form -->
-        <!-- <div class="col-md-6" class="search-nav">
-            <div class="search-bar">
-                    <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-            </div>
-        </div>    
-             -->
-        <!-- end form  -->
+            <a href="#" class="navbar-brand">HOME</a>
+            <a href="{% url 'shots:allcategories' %}" class="navbar-brand">CATEGORIES</a>
+            <a href="{% url 'shots:alllocations' %}" class="navbar-brand">LOCATION</a>
+            
+        </div> 
     </nav>
 </div> 
     

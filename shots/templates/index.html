@@ -3,6 +3,12 @@
 {% block content %} 
 {{ block.super}}
 
+<!-- searchform -->
+<form class='searchimages' name="myform" method="GET" action="{% url 'shots:search' %}"> 
+    <label for="{{request.GET.q}}">Search</label>
+    <input type="search" name="q" value="{{request.GET.q}}"   placeholder="Search Images by category name">
+</form>
+
     <!-- <div class="container"> -->
     {% for image in images %}
     <!-- Button trigger modal -->

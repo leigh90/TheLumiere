@@ -11,6 +11,8 @@ def index(request):
     images = Image.objects.all()
     imagelocation = Location.objects.all()
     imagecategory = Category.objects.all()
+    locations = Location.get_locations()
+    print(locations)
 
     args = {'images': images, 'imagelocation':imagelocation, 'imagecategory':imagecategory }
     
@@ -19,14 +21,26 @@ def index(request):
 
 def allcategories(request):
     allcategories = Category.objects.all()
-
     return render (request, 'categories.html',locals())
-
 
 def locations(request):
     alllocations = Location.objects.all()
-
     return render (request, 'areas.html',locals())
+
+def nairobiimages(request):
+    images = Image.objects.filter(image_location__location='Nairobi')
+    return render(request, 'nairobi.html',locals())
+
+def dianiimages(request):
+    images = Image.objects.filter(image_location__location='Diani')
+    return render(request, 'diani.html',locals())
+
+
+
+
+
+
+
 
 # def search(request):
 #     if 'image' in request.GET and request.GET["image"]:
@@ -46,7 +60,7 @@ def locations(request):
 
 def search_by_category(request):
     query = request.GET.get('q')
-    result = cloudinary.Search('q')
+    result = cloudinary.Search()
     return render(request,'search.html',locals())
 
 

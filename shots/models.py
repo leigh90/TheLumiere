@@ -8,6 +8,10 @@ class Location(models.Model):
     location = models.CharField(max_length = 250)
     location_logo = CloudinaryField(blank=True)
 
+    @classmethod
+    def get_locations(cls):
+        locations = Location.objects.all()
+        return locations
     
     def __str__(self): 
         return self.location
@@ -54,9 +58,10 @@ class Image(models.Model):
 
     @classmethod
     def filter_by_location(cls,location):
-        locations = cls.objects.filter(image_location__icontains = image_Location)
-        return images
+        locationimages = Image.objects.filter(image_location__location=location).all()
+        return locationimages
     
+
     # @classmethod
     # def filter_by_category(cls,category):
     #     locations = cls.objects.filter(image_category__icontains = image_Category)

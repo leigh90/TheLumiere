@@ -8,6 +8,9 @@ import cloudinary
 # Create your views here.
 
 def index(request):
+    '''
+    Returns the home page with all the images
+    '''
     images = Image.objects.all()
     imagelocation = Location.objects.all()
     imagecategory = Category.objects.all()
@@ -20,20 +23,40 @@ def index(request):
     
 
 def allcategories(request):
+    '''
+    Returns a list of all the image categories available
+    '''
     allcategories = Category.objects.all()
     return render (request, 'categories.html',locals())
 
 def locations(request):
+    '''
+    Returns a list of the location tagged to the images
+    '''
     alllocations = Location.objects.all()
     return render (request, 'areas.html',locals())
 
 def nairobiimages(request):
+    '''
+    Returns a list of all images from Nairobi
+    '''
     images = Image.objects.filter(image_location__location='Nairobi')
     return render(request, 'nairobi.html',locals())
 
 def dianiimages(request):
+    '''
+    Returns a list of all the images from Diani
+    '''
     images = Image.objects.filter(image_location__location='Diani')
     return render(request, 'diani.html',locals())
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        images = Image.objects.filter(Q(image_category__category__icontains=query))
+    else:
+        images = Image.objects.all()
+    return render(request,'search.html',locals())
 
 
 
@@ -58,10 +81,10 @@ def dianiimages(request):
 #     results = Image.objects.filter(Q(image__image_category__icontains=query))
 #     return render(request,'search.html',locals())
 
-def search_by_category(request):
-    query = request.GET.get('q')
-    result = cloudinary.Search()
-    return render(request,'search.html',locals())
+# def search_by_category(request):
+#     query = request.GET.get('q')
+#     result = cloudinary.Search()
+#     return render(request,'search.html',locals())
 
 
 # result = cloudinary.Search()\

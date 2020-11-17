@@ -16,14 +16,50 @@
 
   {% if images %}
     {% for image in images %}
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <img src="{{image.image.url}}" class="img-responsive" alt="Image">
             <h3>Taken:{{imagelocation}}</h3>
             <h3>Category:{{imagecategory}}</h3>
         </div>
-        </div> 
+        </div>  -->
+        <div class="col-md-3">
+          <div class="row">
+              <div class="thumbnail">
+                  <button type="button" class= "modal-button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}"> <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+                  </button>
+              </div>
+          </div>
+      </div> 
     {% endfor %}
+     <!-- Modal -->
+  <!-- display images in a modal -->
+  {%for image in images%}
+  <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{image.image_name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                  <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+                  <h3>Location:{{image.image_location}}</h3>
+                  <h3>Category:{{image.image_category}}</h3>    
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
+
   {% endif %}
   </div>
 </div>
 {% endblock %}
+
+
+  

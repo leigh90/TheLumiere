@@ -22,10 +22,11 @@ Images can be tagged by categories and location.
 Existing Categories include:
 * Food Photography
 * Interior Design
-* Fashion
+* Travel
 
 # Setup/Installation Requirements 
-*git clone https://github.com/Ashleyzawadi/Image-Gallery.git
+*Clone the repository 
+```*git clone https://github.com/Ashleyzawadi/Image-Gallery.git```
 * cd Image-Gallery
 * source virtual/bin/activate
 * Install all the necessary requirements by running pip install -r requirements.txt (Python 3).

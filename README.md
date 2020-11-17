@@ -13,11 +13,12 @@ Lumiere is an app that allows users to post images and view them.
 ![posts](https://user-images.githubusercontent.com/36164543/42690925-da97a0aa-86ae-11e8-8799-2b2c25cf36b3.png)
 
 # SPECIFICATIONS
-Has an administration dashboard that allows the admin to post new pics, edit them and delete existing pics.
-
+1. Admin dashboard that allows the admin to post new pictures, edit them and delete existing pics.
+1. Images can be tagged by categories and location.
+1. Search for images by category
+1. Click to view image details such as name, category and location in a modal.
+ 
 ![modalview](https://user-images.githubusercontent.com/36164543/42690961-f339cd90-86ae-11e8-8e45-d1075cfb6a55.png)
-
-Images can be tagged by categories and location.
 
 Existing Categories include:
 * Food Photography

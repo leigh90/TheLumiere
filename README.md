@@ -25,13 +25,29 @@ Existing Categories include:
 * Travel
 
 # Setup/Installation Requirements 
-*Clone the repository 
-```*git clone https://github.com/Ashleyzawadi/Image-Gallery.git```
-* cd Image-Gallery
-* source virtual/bin/activate
-* Install all the necessary requirements by running pip install -r requirements.txt (Python 3).
-* Run using python3.6 manager.py runserver
+1. Clone the repository 
+```
+git clone https://github.com/Ashleyzawadi/Image-Gallery.git
+```
+2. Go to the Image-gallery folder
+```
+cd Image-Gallery
+```
+3. Create and activate a virtual environment
 
+```
+python3.X -m venv nameofvirtual
+source nameofvirtual/bin/activate
+```
+4. Install all the necessary requirements by running: 
+```
+pip install -r requirements.txt (Python 3).
+```
+5. Set up your enironment variables for cloudinary from cloudinary.com in your environment file
+6. Run the program using 
+```
+python3.6 manager.py runserver
+```
 # Technologies Used
 HTML5
 CSS
@@ -39,29 +55,12 @@ Bootstrap3
 Python3.6
 Django
 
-#  Technologies used 
-
-* astroid==1.6.3 
-* dj-database-url==0.5.0 
-* Django==1.11 
-* gunicorn==19.8.1 
-* isort==4.3.4 
-* lazy-object-proxy==1.3.1 
-* mccabe==0.6.1 
-* psycopg2==2.7.4 
-* pylint==1.8.4 
-* python-decouple==3.1 
-* pytz==2018.4 
-* six==1.11.0 
-* whitenoise==3.3.1 
-* wrapt==1.10.11
-
 # Known Bugs
 
 No Known Bugs
 
 # Support and contact details 
-Email Address: leighdjango@gmail.com
+Email Address: ashdev755@gmail.com
 
 # License and terms of use 
 MIT License this application's source code is free for any open source projects
